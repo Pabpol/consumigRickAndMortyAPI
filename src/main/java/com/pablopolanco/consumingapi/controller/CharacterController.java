@@ -3,6 +3,7 @@ package com.pablopolanco.consumingapi.controller;
 import com.pablopolanco.consumingapi.exception.CharacterServiceException;
 import com.pablopolanco.consumingapi.responseDTO.CharacterResponseDTO;
 import com.pablopolanco.consumingapi.service.CharacterService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,10 +33,9 @@ public class CharacterController {
      * @throws Exception
      */
     @GetMapping("/{id}")
-    @ResponseStatus(HttpStatus.OK)
-    public CharacterResponseDTO getCharacter(@PathVariable Integer id, HttpServletResponse response) {
+    public ResponseEntity<CharacterResponseDTO> getCharacter(@PathVariable Integer id) {
         try {
-            return characterServiceImpl.getCharacterResponseDTO(id);
+            return new ResponseEntity<>(characterServiceImpl.getCharacterResponseDTO(id),HttpStatus.OK);
         } catch (CharacterServiceException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, e.getMessage());
         }
