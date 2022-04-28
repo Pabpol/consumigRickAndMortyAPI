@@ -1,4 +1,4 @@
-package com.pablo_polanco.consumigAPI;
+package com.pablopolanco.consumingapi;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.pablo_polanco.consumigAPI.exception;
+package com.pablopolanco.consumingapi.exception;
 
 import lombok.NoArgsConstructor;
 

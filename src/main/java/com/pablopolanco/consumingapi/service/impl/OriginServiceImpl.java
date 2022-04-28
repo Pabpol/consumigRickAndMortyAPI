@@ -1,9 +1,9 @@
-package com.pablo_polanco.consumigAPI.service.impl;
+package com.pablopolanco.consumingapi.service.impl;
 
-import com.pablo_polanco.consumigAPI.client.APIClient;
-import com.pablo_polanco.consumigAPI.model.Location;
-import com.pablo_polanco.consumigAPI.responseDTO.OriginResponseDTO;
-import com.pablo_polanco.consumigAPI.service.OriginService;
+import com.pablopolanco.consumingapi.client.LocationAPIClient;
+import com.pablopolanco.consumingapi.responseDTO.OriginResponseDTO;
+import com.pablopolanco.consumingapi.service.OriginService;
+import com.pablopolanco.consumingapi.model.Location;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 public class OriginServiceImpl implements OriginService {
 
     @Autowired
-    private APIClient apiClient;
+    private LocationAPIClient locationAPIClient;
     @Autowired
     private ModelMapper modelMapper;
 
@@ -26,10 +26,9 @@ public class OriginServiceImpl implements OriginService {
     @Override
     public OriginResponseDTO getOriginResponseDTO(Integer id) {
 
-        Location location = apiClient.location(id);
-        OriginResponseDTO originRsponseDTO = modelMapper.map(location, OriginResponseDTO.class);
-        
-        return originRsponseDTO;
+        Location location = locationAPIClient.location(id);
+
+        return modelMapper.map(location, OriginResponseDTO.class);
     }
     
 }

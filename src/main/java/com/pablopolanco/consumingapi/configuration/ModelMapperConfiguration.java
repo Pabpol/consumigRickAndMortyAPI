@@ -1,4 +1,4 @@
-package com.pablo_polanco.consumigAPI.configuration;
+package com.pablopolanco.consumingapi.configuration;
 
 import org.modelmapper.Conditions;
 import org.modelmapper.ModelMapper;

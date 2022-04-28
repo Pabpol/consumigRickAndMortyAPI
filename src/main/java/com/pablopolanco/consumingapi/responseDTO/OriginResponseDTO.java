@@ -1,4 +1,4 @@
-package com.pablo_polanco.consumigAPI.responseDTO;
+package com.pablopolanco.consumingapi.responseDTO;
 
 import java.util.List;
 

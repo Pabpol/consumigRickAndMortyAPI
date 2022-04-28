@@ -1,4 +1,4 @@
-package com.pablo_polanco.consumigAPI.model;
+package com.pablopolanco.consumingapi.model;
 
 import java.util.List;
 

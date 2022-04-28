@@ -1,15 +1,15 @@
-package com.pablo_polanco.consumigAPI.controller;
+package com.pablopolanco.consumingapi.controller;
 
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.pablo_polanco.consumigAPI.exception.CharacterServiceException;
-import com.pablo_polanco.consumigAPI.responseDTO.CharacterResponseDTO;
-import com.pablo_polanco.consumigAPI.responseDTO.OriginResponseDTO;
-import com.pablo_polanco.consumigAPI.service.impl.CharacterServiceImpl;
-import com.pablo_polanco.consumigAPI.service.impl.OriginServiceImpl;
+import com.pablopolanco.consumingapi.responseDTO.CharacterResponseDTO;
+import com.pablopolanco.consumingapi.responseDTO.OriginResponseDTO;
+import com.pablopolanco.consumingapi.exception.CharacterServiceException;
+import com.pablopolanco.consumingapi.service.impl.CharacterServiceImpl;
+import com.pablopolanco.consumingapi.service.impl.OriginServiceImpl;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -31,7 +31,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringBootTest
 @AutoConfigureMockMvc
 @ExtendWith(SpringExtension.class)
-public class CharacterControllerTest {
+class CharacterControllerTest {
 
     @Autowired
     private MockMvc mockMvc;
@@ -42,9 +42,11 @@ public class CharacterControllerTest {
     @MockBean
     private OriginServiceImpl originServiceImpl;
 
-
     @Autowired
     private ObjectMapper objectMapper;
+
+
+    //TODO test unitario controller
 
     @Test
     void getCharacterSuccesed () throws Exception{

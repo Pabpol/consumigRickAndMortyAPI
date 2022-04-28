@@ -1,5 +1,8 @@
-package com.pablo_polanco.consumigAPI.controller;
+package com.pablopolanco.consumingapi.controller;
 
+import com.pablopolanco.consumingapi.exception.CharacterServiceException;
+import com.pablopolanco.consumingapi.responseDTO.CharacterResponseDTO;
+import com.pablopolanco.consumingapi.service.CharacterService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,10 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.servlet.http.HttpServletResponse;
 
-import com.pablo_polanco.consumigAPI.exception.CharacterServiceException;
-import com.pablo_polanco.consumigAPI.responseDTO.CharacterResponseDTO;
-import com.pablo_polanco.consumigAPI.service.impl.CharacterServiceImpl;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
@@ -21,7 +20,7 @@ import org.springframework.http.HttpStatus;
 public class CharacterController {
 
     @Autowired
-    private CharacterServiceImpl characterServiceImpl;
+    private CharacterService characterServiceImpl;
 
     /**
      * @param id
