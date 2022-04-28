@@ -12,15 +12,18 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 
 @RestController
 @RequestMapping("/character")
 public class CharacterController {
 
-    @Autowired
-    private CharacterService characterServiceImpl;
+    private final CharacterService characterServiceImpl;
+
+    public CharacterController(CharacterService characterServiceImpl) {
+        this.characterServiceImpl = characterServiceImpl;
+    }
+
 
     /**
      * @param id

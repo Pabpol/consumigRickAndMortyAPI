@@ -7,7 +7,6 @@ import com.pablopolanco.consumingapi.responseDTO.CharacterResponseDTO;
 import com.pablopolanco.consumingapi.service.CharacterService;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import feign.FeignException;
@@ -15,12 +14,18 @@ import feign.FeignException;
 @Service
 public class CharacterServiceImpl implements CharacterService {
 
-    @Autowired
-    private CharacterAPIClient characterAPIClient;
-    @Autowired
-    private ModelMapper modelMapper;
-    @Autowired
-    private OriginServiceImpl originServiceImpl;
+
+    private final CharacterAPIClient characterAPIClient;
+    private final ModelMapper modelMapper;
+    private final OriginServiceImpl originServiceImpl;
+
+    public CharacterServiceImpl(CharacterAPIClient characterAPIClient, ModelMapper modelMapper, OriginServiceImpl originServiceImpl) {
+
+        this.characterAPIClient = characterAPIClient;
+        this.modelMapper = modelMapper;
+        this.originServiceImpl = originServiceImpl;
+    }
+
 
     /**
      * @param id

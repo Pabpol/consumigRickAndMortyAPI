@@ -6,7 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "RickAndMortyAPI", url = "https://rickandmortyapi.com/api/character")
+@FeignClient(name = "characterRickAndMortyAPI", url = "https://rickandmortyapi.com/api/character")
 public interface CharacterAPIClient {
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)

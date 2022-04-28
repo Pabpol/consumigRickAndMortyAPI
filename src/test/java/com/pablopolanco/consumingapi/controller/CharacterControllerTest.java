@@ -65,7 +65,7 @@ class CharacterControllerTest {
                 .andExpect(jsonPath("$.status").value("Alive"))
                 .andExpect(jsonPath("$.species").value("Human"))
                 .andExpect(jsonPath("$.type").value(""))
-                .andExpect(jsonPath("$.episodeCount").value(10))
+                .andExpect(jsonPath("$.episode_count").value(10))
                 .andExpect(jsonPath("$.origin.name").value("Citadel of Ricks"))
                 .andExpect(jsonPath("$.origin.url").value("https://rickandmortyapi.com/api/location/3"))
                 .andExpect(jsonPath("$.origin.dimension").value("unknown"))

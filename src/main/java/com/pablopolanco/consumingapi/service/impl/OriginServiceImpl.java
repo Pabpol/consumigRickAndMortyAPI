@@ -6,18 +6,20 @@ import com.pablopolanco.consumingapi.service.OriginService;
 import com.pablopolanco.consumingapi.model.Location;
 
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class OriginServiceImpl implements OriginService {
 
-    @Autowired
-    private LocationAPIClient locationAPIClient;
-    @Autowired
-    private ModelMapper modelMapper;
+    private final LocationAPIClient locationAPIClient;
+    private final ModelMapper modelMapper;
 
-    
+    public OriginServiceImpl(LocationAPIClient locationAPIClient, ModelMapper modelMapper) {
+        this.locationAPIClient = locationAPIClient;
+        this.modelMapper = modelMapper;
+    }
+
+
     /** 
      * @param id
      * @return OriginRsponseDTO
