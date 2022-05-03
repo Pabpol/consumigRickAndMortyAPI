@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Location {
 
-    private String created;
-    private String name;
-    private List<String> residents;
     private Integer id;
+    private String name;
     private String type;
     private String dimension;
+    private List<String> residents;
     private String url;
+    private String created;
 }

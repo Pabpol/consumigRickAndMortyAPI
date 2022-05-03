@@ -30,10 +30,9 @@ public class CharacterController {
      * @param id
      * @return CharacterResponseDTO
      *         Endpoint que entrega un CharacterResponseDTO según id
-     * @throws Exception
      */
     @GetMapping("/{id}")
-    public ResponseEntity<CharacterResponseDTO> getCharacter(@PathVariable Integer id) {
+    public ResponseEntity<CharacterResponseDTO> getCharacter(@PathVariable Integer id){
         try {
             return new ResponseEntity<>(characterServiceImpl.getCharacterResponseDTO(id),HttpStatus.OK);
         } catch (CharacterServiceException e) {
